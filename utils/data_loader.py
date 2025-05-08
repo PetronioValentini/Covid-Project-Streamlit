@@ -7,7 +7,6 @@ def page_config():
     """
     st.set_page_config(
         page_title="Covid 19 DataFrame Display",
-        layout="wide",
         initial_sidebar_state="expanded",
     )
     
@@ -16,7 +15,7 @@ def load_data():
     """
     Load the Covid-19 data from a CSV file and return it as a DataFrame.
     """
-    df_covid = pd.read_csv("data/covid19.csv")
+    df_covid = pd.read_csv("data/prontuarios_gerados.csv", index_col=0)
     return df_covid
 
 
