@@ -1,35 +1,39 @@
 import streamlit as st
-from utils.data_loader import page_config
+from utils.utils import page_config
 import webbrowser
 
 def main():
       
     page_config() # Set the page configuration
 
-    # Title
-    st.title("Covid-19 DataFrame 🦠")
-    
-    # Body
+    # Título
+    st.title("DataFrame da Covid-19 🦠")
+
+    # Corpo
     st.markdown(
     """
-    ### About this App
+    ### Sobre este Aplicativo
 
-    This interactive dashboard presents a **global dataset on the Covid-19 pandemic**, with information per country, including:
+    Este painel interativo apresenta um **conjunto de dados global sobre a pandemia de Covid-19**, com informações por país, incluindo:
 
-    - Total confirmed cases, deaths, recoveries, and active cases  
-    - New cases, deaths, and recoveries (daily updates)  
-    - Derived indicators such as:
-        - **Deaths per 100 cases**
-        - **Recoveries per 100 cases**
-        - **Deaths per 100 recoveries**
-    - Weekly case count comparisons and percentage increase  
-    - WHO Region associated with each country
+    - Total de casos confirmados, mortes, recuperações e casos ativos  
+    - Novos casos, mortes e recuperações (atualizações diárias)  
+    - Indicadores derivados, como:
+        - **Casos e mortes por 1 milhão de habitantes**  
+        - **Testes realizados e testes por 1 milhão de habitantes**
+        - **Taxa de mortalidade e taxa de recuperação**
+        - **Casos críticos e casos ativos**
+    - População total e continente de cada país
+    - Dados de vacinação (total de vacinas administradas e porcentagem da população vacinada)
+    - Comparações semanais de casos e aumento percentual  
+    - Região da OMS associada a cada país
 
-    The goal is to **explore trends and make country-level comparisons** using a simple and interactive interface built with Streamlit.
+    O objetivo é **explorar tendências e fazer comparações por país** usando uma interface simples e interativa construída com Streamlit.
 
-    Use the sidebar to navigate between pages, and click the button below to access the original dataset on Kaggle.
+    Use a barra lateral para navegar entre as páginas e clique no botão abaixo para acessar o conjunto de dados original no Kaggle.
     """
     )
+
     
     btn = st.button("Covid Kaggle Dataset")
     if btn:
@@ -37,7 +41,8 @@ def main():
     
     
     #Sidebar
-    st.sidebar.markdown("Desenvolvido por [Petrônio](https://github.com/petroniovalentini)")
+    st.sidebar.markdown("Desenvolvido por [Petrônio](https://github.com/petroniovalentini) para fins de aprendizado.")
+    
     
 
 
